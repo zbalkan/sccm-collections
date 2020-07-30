@@ -3,18 +3,18 @@ Based on Benoit Lecours's [work on TechNet](https://gallery.technet.microsoft.co
 
 ## Roadmap
 
-[ ] Add MS Office versions
+- [x] **Add MS Office versions**
 
-    [ ] 2010
-    [ ] 2013
-    [ ] 2016
-    [ ] 2019
+  - [x] 2010
+  - [x] 2013
+  - [x] 2016
+  - [x] 2019
 
-[ ] Add MS SQL Server versions
+- [ ] Add MS SQL Server versions
 
-    [ ] 2005
-    [ ] 2008
-    [ ] 2012
-    [ ] 2014
-    [ ] 2016
-    [ ] 2017
+  - [ ] 2005
+  - [ ] 2008
+  - [ ] 2012
+  - [ ] 2014
+  - [ ] 2016
+  - [ ] 2017
