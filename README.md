@@ -11,7 +11,7 @@ Based on Benoit Lecours's [work on TechNet](https://gallery.technet.microsoft.co
   - [x] 2019
 
 
-- [x] Add MS SQL Server versions
+- [x] **Add MS SQL Server versions**
 
   - [x] 2005
   - [x] 2008
