@@ -79,7 +79,7 @@ $ExistingCollections = Get-CMDeviceCollection -Name "* | *" | Select-Object Coll
 
 #List of Collections Query
 $DummyObject = New-Object -TypeName PSObject 
-$Collections = @()
+$Collections = [System.Collections.ArrayList]@()
 
 $Collections +=
 $DummyObject |
