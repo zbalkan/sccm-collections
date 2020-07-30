@@ -44,6 +44,7 @@
 # 2020/01/09 - Add Collection 95-100
 # 2020/07/30 - Add Collection 101-104 Office versions - Zafer BALKAN
 # 2020/07/30 - Add Collection 104-111 SQL Server versions - Zafer BALKAN
+# 2020/07/30 - Add Collection 112 Domain controllers - Zafer BALKAN 
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
@@ -1087,6 +1088,15 @@ $DummyObject |
 Select-Object @{L="Name"
 ; E={"SQL Server | All"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from  SMS_R_System inner join SMS_G_System_COMPUTER_SYSTEM on SMS_G_System_COMPUTER_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_COMPUTER_SYSTEM.Roles like '%SQLServer%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All Clients"}}
+
+##Collection 112
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"All domain Controlers"}},@{L="Query"
+; E={"select * from  SMS_R_System inner join SMS_G_System_COMPUTER_SYSTEM on SMS_G_System_COMPUTER_SYSTEM.ResourceId = SMS_R_System.ResourceId where SMS_G_System_COMPUTER_SYSTEM.Roles like '%Domain_Controller%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
 ; E={"All Clients"}}
 
