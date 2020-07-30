@@ -20,4 +20,4 @@ Based on Benoit Lecours's [work on TechNet](https://gallery.technet.microsoft.co
   - [x] 2016
   - [x] 2017
   
-- [ ] **Add Domain controllers**
+- [x] **Add Domain controllers**
