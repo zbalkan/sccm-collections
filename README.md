@@ -10,11 +10,12 @@ Based on Benoit Lecours's [work on TechNet](https://gallery.technet.microsoft.co
   - [x] 2016
   - [x] 2019
 
-- [ ] Add MS SQL Server versions
 
-  - [ ] 2005
-  - [ ] 2008
-  - [ ] 2012
-  - [ ] 2014
-  - [ ] 2016
-  - [ ] 2017
+- [x] Add MS SQL Server versions
+
+  - [x] 2005
+  - [x] 2008
+  - [x] 2012
+  - [x] 2014
+  - [x] 2016
+  - [x] 2017
