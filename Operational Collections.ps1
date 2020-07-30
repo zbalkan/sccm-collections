@@ -3,7 +3,7 @@
 # Website : www.SystemCenterDudes.com
 # Twitter : @scdudes
 #
-# Version : 3.4
+# Version : 3.5
 # Created : 2014/07/17
 # Modified : 
 # 2014/08/14 - Added Collection 34,35,36
@@ -42,7 +42,8 @@
 # 2019/04/04 - Add Collection 89-91
 # 2019/09/17 - Add Collection 92-94, Windows 2019, Updated Windows 2016
 # 2020/01/09 - Add Collection 95-100
-#            
+# 2020/07/30 - Add Collection 101-104 Office versions - Zafer BALKAN
+#
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
 #
@@ -988,6 +989,42 @@ Select-Object @{L="Name"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.18363'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
 ; E={"Workstations | Windows 10 v1909"}}
+
+##Collection 101
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office | 2010"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_ADD_REMOVE_PROGRAMS on SMS_G_System_ADD_REMOVE_PROGRAMS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "Microsoft Office %2010%" order by SMS_R_System.Name"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All Workstations"}}
+
+##Collection 102
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office | 2013"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_ADD_REMOVE_PROGRAMS on SMS_G_System_ADD_REMOVE_PROGRAMS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "Microsoft Office %2013%" order by SMS_R_System.Name"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All Workstations"}}
+
+##Collection 103
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office | 2016"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_ADD_REMOVE_PROGRAMS on SMS_G_System_ADD_REMOVE_PROGRAMS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "Microsoft Office %2016%" order by SMS_R_System.Name"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All Workstations"}}
+
+##Collection 104
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office | 2019"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_ADD_REMOVE_PROGRAMS on SMS_G_System_ADD_REMOVE_PROGRAMS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "Microsoft Office %2019%" order by SMS_R_System.Name"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All Workstations"}}
 
 #Check Existing Collections
 $Overwrite = 1
