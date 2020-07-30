@@ -1095,7 +1095,7 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"All domain Controlers"}},@{L="Query"
+; E={"All Domain Controllers"}},@{L="Query"
 ; E={"select * from  SMS_R_System inner join SMS_G_System_COMPUTER_SYSTEM on SMS_G_System_COMPUTER_SYSTEM.ResourceId = SMS_R_System.ResourceId where SMS_G_System_COMPUTER_SYSTEM.Roles like '%Domain_Controller%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
 ; E={"All Clients"}}
